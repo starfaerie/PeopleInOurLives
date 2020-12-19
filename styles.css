@@ -7,6 +7,7 @@ html {
 body,html {
     margin:0;
     padding:0;
+    color:#fff;
 }
 
 footer {
@@ -20,10 +21,11 @@ footer {
 }
 
 abbr {
-    border-bottom: none !important;
     cursor: inherit !important;
-    text-decoration: none !important;
+    color: blueviolet;
 }
+
+
 
 a:link {
     text-decoration:none;
