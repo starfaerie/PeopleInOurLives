@@ -21,8 +21,10 @@ footer {
 }
 
 abbr {
+    border-bottom: none !important;
     cursor: inherit !important;
-    color: blueviolet;
+    text-decoration: none !important;
+    color: cyan;
 }
 
 
