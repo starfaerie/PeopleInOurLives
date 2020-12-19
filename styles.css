@@ -11,7 +11,7 @@ body,html {
 }
 
 footer {
-    display:table;
+    display:block;
     text-align:center;
     margin-left:auto;
     margin-right:auto;
@@ -27,9 +27,48 @@ abbr {
     color: cyan;
 }
 
-
-
-a:link {
-    text-decoration:none;
-    color:#fdcdaf;
+.player {
+    margin-left: 300px;
+    margin-right: 200px;
+    border-color: red;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 20px;
+    padding: 15px;
+    background-color: #fff;
 }
+
+.player-container {
+    flex: auto;
+    flex-direction: column;
+    color:#000;
+}
+
+.photo-left {
+    float: left;
+    margin-right: 30px;
+}
+
+.player-description {
+    display: auto;
+}
+
+.player-header {
+    font-size: xx-large;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+	}
+.clearfix { display: inline-table; }
+/* Hides from IE-mac \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* End hide from IE-mac */

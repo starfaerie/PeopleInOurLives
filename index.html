@@ -30,18 +30,25 @@
     <main class="content" id="content">
         <section>
             <article>
-                <div class="player">
-                    <h2>
-                        The Oldest Zoomer - Kenneth Freeman
-                    </h2>
-                    <picture>
-                        <source srcset="Images/Kenneth_800.webp, Images/Kenneth_1600.webp 2x"
-                            src="Images/Kenneth_1600.webp" type="image/webp" />
-                        <img srcset="Images/Kenneth_800.jpg, Images/Kenneth_1600.jpg 2x" src="Images/Kenneth_1600.jpg"
-                            width="800" height="533" alt="Picture of Kenneth" loading="lazy">
-                    </picture>
-                    <p>We talk to 61 year old, deaf, demisexual, socialist, wikipedia editor and privacy advocate Kenneth
-                        Freeman.</p>
+                <div class="player-container">
+                    <div class="player">
+                        <picture class="photo-left" onclick="play()">
+                            <source srcset="Images/Kenneth_800.webp, Images/Kenneth_1600.webp 2x"
+                                src="Images/Kenneth_1600.webp" type="image/webp" />
+                            <img srcset="Images/Kenneth_800.jpg, Images/Kenneth_1600.jpg 2x"
+                                src="Images/Kenneth_1600.jpg" width="200" height="133.25" alt="Picture of Kenneth"
+                                loading="lazy">
+                        </picture>
+                        <h2 class="player-header">
+                            The Oldest Zoomer - Kenneth Freeman
+                        </h2>
+                        <p class="player-description">We talk to 61 year old, deaf, demisexual, socialist, wikipedia
+                            editor and privacy advocate
+                            Kenneth
+                            Freeman.</p>
+                        <div id="waveform"></div>
+                        <div class="clearfix"></div>
+                    </div>
                 </div>
             </article>
         </section>
@@ -77,6 +84,28 @@
             </footer>
         </section>
     </main>
+
+    <script src="https://unpkg.com/wavesurfer.js@4.3.0/dist/wavesurfer.min.js" crossorigin="anonymous"></script>
+    <script>
+        var wavesurfer = WaveSurfer.create({
+            container: document.querySelector('#waveform'),
+            waveColor: '#D9DCFF',
+            progressColor: '#4353FF',
+            cursorColor: '#4353FF',
+            barWidth: 3,
+            barRadius: 3,
+            cursorWidth: 2,
+            barHeight: 2,
+            height: 50,
+            barGap: 3,
+            hideScrollbar: true,
+            responsive: true
+        });
+        wavesurfer.load('Audio/song_cjrg_teasdale_64kb.mp3');
+        function play() {
+            wavesurfer.play();
+        }
+    </script>
 </body>
 
 </html>
