@@ -16,8 +16,128 @@
     </noscript>
     <link rel="stylesheet" href="Fonts/Domine.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
     <title>People In Our Lives</title>
+    <!-- Media player style -->
+    <style>
+        .audio-player {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .details {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 25px;
+            color: #000;
+        }
+
+        .ep-art {
+            margin: 0 25px 25px 25px;
+            height: 250px;
+            width: 250px;
+            background-image: url("Images/Kenneth_1600.png");
+            background-size: cover;
+            border-radius: 100%;
+        }
+
+        .ep-name {
+            font-size: 3.75vw;
+        }
+
+        .ep-artist {
+            font-size: 2.25vw;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .playpause-ep {
+            padding: 25px;
+            opacity: 0.8;
+            /* Smoothly transition the opacity */
+            transition: opacity .2s;
+        }
+
+        .playpause-ep:hover {
+            opacity: 1.0;
+        }
+
+        .slider_container {
+            width: 75%;
+            max-width: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #000;
+        }
+
+        /* Modify the appearance of the slider */
+        .seek_slider,
+        .volume_slider {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            height: 5px;
+            background:#000;
+            color:#000;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+
+        /* Modify the appearance of the slider thumb */
+        .seek_slider::-webkit-slider-thumb,
+        .volume_slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            background:#e3e3e3;
+            cursor: pointer;
+            border-radius: 100%;
+            border: 1px solid #000;
+        }
+
+        .seek_slider:hover,
+        .volume_slider:hover {
+            opacity: 1.0;
+        }
+
+        .seek_slider {
+            width: 60%;
+        }
+
+        .volume_slider {
+            width: 30%;
+        }
+
+        .current-time,
+        .total-duration {
+            padding: 10px;
+            color: #000;
+        }
+
+        i.fa-volume-down,
+        i.fa-volume-up {
+            padding: 10px;
+        }
+
+        i.fa-play-circle,
+        i.fa-pause-circle {
+            cursor: pointer;
+            color: #000;
+        }
+    </style>
 </head>
 
 <body>
@@ -26,28 +146,42 @@
         <h1></h1>
     </div>
 
-
     <main class="content" id="content">
         <section>
             <article>
                 <div class="player-container">
                     <div class="player">
-                        <picture class="photo-left" onclick="play()">
-                            <source srcset="Images/Kenneth_800.webp, Images/Kenneth_1600.webp 2x"
-                                src="Images/Kenneth_1600.webp" type="image/webp" />
-                            <img srcset="Images/Kenneth_800.jpg, Images/Kenneth_1600.jpg 2x"
-                                src="Images/Kenneth_1600.jpg" width="200" height="133.25" alt="Picture of Kenneth"
-                                loading="lazy">
-                        </picture>
-                        <h2 class="player-header">
-                            The Oldest Zoomer - Kenneth Freeman
+                        <h2 class="episode-title">
+                            The Oldest Zoomer
                         </h2>
-                        <p class="player-description">We talk to 61 year old, deaf, demisexual, socialist, wikipedia
-                            editor and privacy advocate
+                        <p class="player-description">Our talk with 61 year old, deaf, demisexual, socialist, wikipedia
+                            editor, and privacy advocate:
                             Kenneth
                             Freeman.</p>
-                        <div id="waveform"></div>
-                        <div class="clearfix"></div>
+                        <!-- Audio Player -->
+                        <div class="audio-player">
+                            <div class="details">
+                                <div class="ep-art"></div>
+                                <div class="ep-name">Ep Name</div>
+                                <div class="ep-artist">Ep Artist</div>
+                            </div>
+                            <div class="buttons">
+                                <div class="playpause-ep" onclick="playpauseEp()"><i
+                                        class="fa fa-play-circle fa-5x"></i>
+                                </div>
+                            </div>
+                            <div class="slider_container">
+                                <div class="current-time">00:00</div>
+                                <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+                                <div class="total-duration">00:00</div>
+                            </div>
+                            <div class="slider_container">
+                                <i class="fa fa-volume-down"></i>
+                                <input type="range" min="1" max="100" value="99" class="volume_slider"
+                                    onchange="setVolume()">
+                                <i class="fa fa-volume-up"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </article>
@@ -74,37 +208,126 @@
                 <p style="text-align:center;margin-top:0.5em;">
                     <a href="https://questioncopyright.org/" class="center-footer">
                         <img src="https://questioncopyright.org/cm/images/banner/qco-banner-black-150x63.png"
-                            alt="QuestionCopyright.org" style="border:0;width:74px;height:31px;margin:0 30px 0 30px;" />
-                    </a>
+                            alt="QuestionCopyright.org"
+                            style="border:0;width:74px;height:31px;margin:0 30px 0 30px;" /></a>
                     <a rel="license" href="https://creativecommons.org/publicdomain/mark/1.0/" class="center-footer">
                         <img src="https://i.creativecommons.org/p/mark/1.0/88x31.png" alt="Public Domain Mark"
-                            style="border:0;width:88px;height:31px;margin:0 30px 0 30px;" />
-                    </a>
+                            style="border:0;width:88px;height:31px;margin:0 30px 0 30px;" /></a>
                 </p>
             </footer>
         </section>
     </main>
-
-    <script src="https://unpkg.com/wavesurfer.js@4.3.0/dist/wavesurfer.min.js" crossorigin="anonymous"></script>
+    <!-- Main script for the audio player -->
     <script>
-        var wavesurfer = WaveSurfer.create({
-            container: document.querySelector('#waveform'),
-            waveColor: '#D9DCFF',
-            progressColor: '#4353FF',
-            cursorColor: '#4353FF',
-            barWidth: 3,
-            barRadius: 3,
-            cursorWidth: 2,
-            barHeight: 2,
-            height: 50,
-            barGap: 3,
-            hideScrollbar: true,
-            responsive: true
-        });
-        wavesurfer.load('Audio/song_cjrg_teasdale_64kb.mp3');
-        function play() {
-            wavesurfer.play();
+        let ep_art = document.querySelector(".ep-art");
+        let ep_name = document.querySelector(".ep-name");
+        let ep_artist = document.querySelector(".ep-artist");
+
+        let playpause_btn = document.querySelector(".playpause-ep");
+
+        let seek_slider = document.querySelector(".seek_slider");
+        let volume_slider = document.querySelector(".volume_slider");
+        let curr_time = document.querySelector(".current-time");
+        let total_duration = document.querySelector(".total-duration");
+
+        let ep_index = 0;
+        let isPlaying = false;
+        let updateTimer;
+
+        // Create new audio element
+        let curr_ep = document.createElement('audio');
+
+        // Define the eps that have to be played
+        let ep_list = [
+            {
+                name: "Kenneth Freeman",
+                artist: "People in our Lives",
+                image: "Images/Kenneth_1600.webp",
+                path: "Audio/song_cjrg_teasdale_64kb.mp3"
+            }
+        ];
+
+        function loadEp(ep_index) {
+            clearInterval(updateTimer);
+            resetValues();
+
+            // Load a new ep
+            curr_ep.src = ep_list[ep_index].path;
+            curr_ep.load();
+
+            // Update details of the ep
+            ep_art.style.backgroundImage = "url(" + ep_list[ep_index].image + ")";
+            ep_name.textContent = ep_list[ep_index].name;
+            ep_artist.textContent = ep_list[ep_index].artist;
+
+            // Set an interval of 1000 milliseconds for updating the seek slider
+            updateTimer = setInterval(seekUpdate, 1000);
         }
+
+        // Reset Values
+        function resetValues() {
+            curr_time.textContent = "00:00";
+            total_duration.textContent = "00:00";
+            seek_slider.value = 0;
+        }
+
+        function playpauseEp() {
+            if (!isPlaying) playEp();
+            else pauseEp();
+        }
+
+        function playEp() {
+            curr_ep.play();
+            isPlaying = true;
+
+            // Replace icon with the pause icon
+            playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-5x"></i>';
+        }
+
+        function pauseEp() {
+            curr_ep.pause();
+            isPlaying = false;
+
+            // Replace icon with the play icon
+            playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-5x"></i>';;
+        }
+
+        function seekTo() {
+            seekto = curr_ep.duration * (seek_slider.value / 100);
+            curr_ep.currentTime = seekto;
+        }
+
+        function setVolume() {
+            curr_ep.volume = volume_slider.value / 100;
+        }
+
+        function seekUpdate() {
+            let seekPosition = 0;
+
+            // Check if the current ep duration is a legible number
+            if (!isNaN(curr_ep.duration)) {
+                seekPosition = curr_ep.currentTime * (100 / curr_ep.duration);
+                seek_slider.value = seekPosition;
+
+                // Calculate the time left and the total duration
+                let currentMinutes = Math.floor(curr_ep.currentTime / 60);
+                let currentSeconds = Math.floor(curr_ep.currentTime - currentMinutes * 60);
+                let durationMinutes = Math.floor(curr_ep.duration / 60);
+                let durationSeconds = Math.floor(curr_ep.duration - durationMinutes * 60);
+
+                // Adding a zero to the single digit time values
+                if (currentSeconds < 10) { currentSeconds = "0" + currentSeconds; }
+                if (durationSeconds < 10) { durationSeconds = "0" + durationSeconds; }
+                if (currentMinutes < 10) { currentMinutes = "0" + currentMinutes; }
+                if (durationMinutes < 10) { durationMinutes = "0" + durationMinutes; }
+
+                curr_time.textContent = currentMinutes + ":" + currentSeconds;
+                total_duration.textContent = durationMinutes + ":" + durationSeconds;
+            }
+        }
+
+        // Load the first ep in the eplist
+        loadEp(ep_index);
     </script>
 </body>
 
