@@ -12,6 +12,7 @@ body,html {
 }
 
 footer {
+    margin-top:20px;
     display:block;
     text-align:center;
     margin-left:auto;
@@ -19,6 +20,8 @@ footer {
     padding:20px 10px 20px 10px;
     color:#fff;
     font-family:'Domine',serif;
+    background-color:#202020;
+    border-radius:10px;
 }
 
 abbr {
@@ -34,8 +37,21 @@ a:hover {
     color:#fa9f54;
 }
 
-.content {
+.ep-0 {
+    margin-top:20px;
+    display:block;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+    padding:20px 10px 20px 10px;
+    color:#fff;
+    font-family:'Domine',serif;
     background-color:#202020;
+    border-radius:10px;
+}
+
+.content {
+    background-color:#000;
     color:#fff;
     width:840px;
     padding:0;
