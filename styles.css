@@ -27,6 +27,13 @@ abbr {
     text-decoration: none !important;
 }
 
+a {
+    color: #cc9050;
+}
+a:hover {
+    color:#fa9f54;
+}
+
 .content {
     background-color:#202020;
     color:#fff;
@@ -36,6 +43,16 @@ abbr {
     border-radius:20px;
 }
 
+.ep-container {
+    margin-top:20px;
+    padding:0;
+    border-color:#fa9f54;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 10px;
+}
+
+
 @media only screen and (max-width:900px) {
     .content {
         width:95%;
@@ -44,18 +61,18 @@ abbr {
 
 .player-container {
     margin:0;
-    border-color: rgb(250, 159, 84);
+    border-color:#fa9f54;
     border-width: 3px;
     border-style: solid;
     border-radius: 20px;
     padding: 15px;
-    background-color: #fff;
+    background-color: #282828;
 }
 
 .player-container {
     flex: auto;
     flex-direction: column;
-    color:#000;
+    color:#fff;
 }
 
 .photo-left {
@@ -146,7 +163,6 @@ abbr {
 @media screen and (max-width: 600px) {
     
     .card-compact {
-        margin-top: 20px;
         border-radius : 10px;
         background-color: #282828;
         line-height: 120%;
@@ -176,7 +192,7 @@ abbr {
 }
 
 .card-compact:hover > .card-text > h2 > a {
-    color: #00ddff;
+    color: #fa9f54;
 }
 
 .card-text {
@@ -202,7 +218,7 @@ time {
 .tag {
 	line-height: 100%;
 	display: inline-block;
-	background-color: #00aabb;
+	background-color: #e9735a;
 	border-radius : 10px;
 	padding : 5px;
 	margin : 2px;
