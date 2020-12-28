@@ -25,7 +25,6 @@ abbr {
     border-bottom: none !important;
     cursor: inherit !important;
     text-decoration: none !important;
-    color: cyan;
 }
 
 .content {
@@ -83,8 +82,128 @@ abbr {
 	clear: both;
 	height: 0;
 	}
-.clearfix { display: inline-table; }
+.clearfix { display:inline-table; }
 /* Hides from IE-mac \*/
-* html .clearfix { height: 1%; }
-.clearfix { display: block; }
+* html .clearfix { height:1%; }
+.clearfix { display:block; }
 /* End hide from IE-mac */
+
+
+/* Main Page Flexbox styles */
+@media screen and (min-width: 600px) {
+    
+    .card-compact {
+        clear: left;
+        border-radius : 10px;
+        background-color: #282828;
+        line-height: 120%;
+        display: flex; /* for IE: 'display: table;' and delete 'align-content' */
+        align-content: flex-start;
+    }
+    
+    .card-compact:hover > .card-image-box > picture > .card-image-small {
+        -webkit-transition: transform 0.5s, filter 0.5s, height 0.4s, bottom 0.4s ease-in-out;
+        -moz-transition: transform 0.5s, filter 0.5s, height 0.4s, bottom 0.4s ease-in-out;
+        -o-transition: transform 0.5s, filter 0.5s, height 0.4s, bottom 0.4s ease-in-out;
+        transition: transform 0.5s, filter 0.5s, height 0.4s, bottom 0.4s ease-in-out;
+        transform: scale(1.2);
+        filter: brightness(1.0);
+    }
+    
+    .card-image-box { /* only used for .card-compact / .card-image-small*/
+        border-radius: 10px 0px 0px 10px;
+        width: 200px;
+        min-width: 200px;
+        overflow: hidden;
+        vertical-align: middle;
+        text-align: center;
+        display: table-cell;
+    }
+    
+    .card-image-small {
+        margin: 0;
+        bottom: 0;
+        top: 0;
+        height: 100%;
+        overflow: hidden;
+        object-fit: cover;
+        position : relative;
+        border-radius: 10px 0px 0px 10px;
+        -webkit-transform-origin: center center;
+        -moz-transform-origin: center center;
+        -o-transform-origin: center center;
+        transform-origin: center center;
+        -webkit-transition: transform 0.5s, filter 0.5s, height 0.4s, bottom 0.4s ease-in-out;
+        -moz-transition: transform 0.5s, filter 0.5s, height 0.4s, bottom 0.4s ease-in-out;
+        -o-transition: transform 0.5s, filter 0.5s, height 0.4s, bottom 0.4s ease-in-out;
+        transition: transform 0.5s, filter 0.5s, height 0.4s, bottom 0.4s ease-in-out;
+        transform: scale(1.0);
+        filter: brightness(0.9);
+    }
+    
+}
+
+@media screen and (max-width: 600px) {
+    
+    .card-compact {
+        margin-top: 20px;
+        border-radius : 10px;
+        background-color: #282828;
+        line-height: 120%;
+    }
+
+    .card-image-box, .card-image-small {
+        width: 100%;
+        height: 150px;
+        border-radius: 10px 10px 0px 0px;
+        margin: auto;
+        object-fit: cover;
+    }
+    
+}
+
+.card-image-box img {
+	max-width: 100%;
+}
+
+.card-footer {
+    display: table;
+}
+
+.card-footer-content, time {
+    display: table-cell;
+    vertical-align: bottom;
+}
+
+.card-compact:hover > .card-text > h2 > a {
+    color: #00ddff;
+}
+
+.card-text {
+    padding: 10px;
+}
+
+.card-text h2 {
+    line-height: 100%;
+}
+
+.card-text time {
+    font-size: 12px;
+}
+
+.title-no-margin {
+    margin: 0;
+}
+
+time {
+    color: #bebebe;
+}
+
+.tag {
+	line-height: 100%;
+	display: inline-block;
+	background-color: #00aabb;
+	border-radius : 10px;
+	padding : 5px;
+	margin : 2px;
+}
