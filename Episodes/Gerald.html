@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="https://peopleinourlives.com/Episodes/Preface.html">
+    <link rel="canonical" href="https://peopleinourlives.com/Episodes/Gerald.html">
     <!-- Search Engine Description -->
-    <meta name="description" content="Our preface episode of the podcast. We talk a little about our personal histories,
-    what we hope to accomplish with this series, and the things on our minds.">
+    <meta name="description" content="Our series of talks with 71 year old, former Black Panther,
+    lifelong Revolutionary and Labour Organizer: Gerald Smith.">
     <meta name="author" content="Astrid Wilde">
     <!-- Link styles -->
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../Fonts/Domine.css">
     <link rel="stylesheet" href="../slider-styles.min.css">
 
-    <title>Preface - People In Our Lives</title>
+    <title>Gerald Smith - People In Our Lives</title>
     <!-- Media player style -->
     <style>
         .audio-player {
@@ -139,16 +139,46 @@
                 <div class="player-container">
                     <div class="player">
                         <h2 class="episode-title">
-                            A Podcast Preface
+                            A Living Black Panther
                         </h2>
-                        <p class="player-description">Our preface episode of the podcast. We talk a little about our personal histories,
-                            what we hope to accomplish with this series, and the things on our minds.
+                        <p class="player-description">
+                            Our series of talks with 71 year old, former Black Panther, lifelong Revolutionary and Labour Organizer: Gerald Smith.
                             <br>
                             <br>
-                            Episode 1: Our Short Introduction (10 mins).
+                            Episode 1: Our Introduction to Gerald.
                             <br>
                             <br>
-                            Episode 2: Our Long Introductions (3 hours).
+                            Episode 2: Gerald's Talk about Political Prisoners in the U.S. and Mumia Abu-Jamal.
+                            <ul>
+                                <li>
+                                    <i>Murder Incorporated - Dreaming of Empire: Book One</i> by Mumia Abu-Jamal and Stephen Vittoria
+                                </li>
+                                <li>
+                                    <i>Executing Justice: An Inside Account of the Case of Mumia Abu-Jamal</i> by Daniel R. Williams
+                                </li>
+                                <li>
+                                    <i>Jailhouse Lawyers: Prisoners Defending Prisoners V. the USA</i> by Mumia Abu-Jamal
+                                </li>
+                                <li>
+                                    <i>We Want Freedom</i> by Mumia Abu-Jamal
+                                </li>
+                                <li>
+                                    <i>Race for Justice: Mumia Abu-Jamal's Fight Against the Death Penalty</i> by Leonard Weinglass
+                                </li>
+                                <li>
+                                    <i>Live from Death Row</i> by Mumia Abu-Jamal
+                                </li>
+                                <li>
+                                    <i>Have Black Lives Ever Mattered?</i> by Mumia Abu-Jamal
+                                </li>
+                            </ul>
+                            Episode 3: Gerald's Talk about Black Nationalism, the history of Blackness in the U.S. and it's intersections with Labour organizing.
+                            <ul>
+                                <li>
+                                    <i>The Rediscovery of Black nationalism</i> by Theodore Draper
+                                </li>
+                            </ul>
+                            Episode 4: Gerald's critique of modern antifascist organizing in the U.S.
                         </p>
                         <!-- Audio Player -->
                         <div class="audio-player">
@@ -156,10 +186,10 @@
                                 <div class="ep-art">
                                     <picture>
                                         <source type="image/webp"
-                                            srcset="../Images/Us/Us_400.webp, ../Images/Us/Us_600.webp 1.5x, ../Images/Us/Us_800.webp 2x" />
-                                        <img style="display:block;margin-left:-70px;" srcset="../Images/Us/Us_400.jpg, ../Images/Us/Us_600.jpg 1.5x, ../Images/Us/Us_800.jpg 2x"
-                                            src="../Images/Us/Us_800.jpg" alt="Gerald Smith" height="300"
-                                            width="400" loading="lazy" />
+                                            srcset="../Images/Gerald/Gerald_400.webp, ../Images/Gerald/Gerald_600.webp 1.5x, ../Images/Gerald/Gerald_800.webp 2x" />
+                                        <img style="display:block;" srcset="../Images/Gerald/Gerald_400.jpg, ../Images/Gerald/Gerald_600.jpg 1.5x, ../Images/Gerald/Gerald_800.jpg 2x"
+                                            src="../Images/Gerald/Gerald_800.jpg" alt="Gerald Smith" height="266.5"
+                                            width="266.5" loading="lazy" />
                                     </picture>
                                 </div>
                                 <div class="ep-name">Guest Name</div>
@@ -208,6 +238,7 @@
             </article>
         </section>
     </main>
+
     <!-- Main script for the audio player -->
     <script>
         let now_playing = document.querySelector(".now-playing");
@@ -233,14 +264,24 @@
         // Define the eps that have to be played
         let ep_list = [
             {
-                name: "Short Introduction",
-                artist: "People In Our Lives",
-                path: "https://api.spreaker.com/v2/episodes/42488483/download.mp3"
+                name: "Introduction",
+                artist: "Gerald Smith",
+                path: "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/WFMU/Broke_For_Free/Directionless_EP/Broke_For_Free_-_01_-_Night_Owl.mp3"
             },
             {
-                name: "Long Introduction",
-                artist: "People In Our Lives",
-                path: "https://api.spreaker.com/v2/episodes/42488490/download.mp3"
+                name: "Political Prisoners",
+                artist: "Gerald Smith",
+                path: "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Tours/Enthusiast/Tours_-_01_-_Enthusiast.mp3"
+            },
+            {
+                name: "Black Nationalism",
+                artist: "Gerald Smith",
+                path: "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/ccCommunity/Chad_Crouch/Arps/Chad_Crouch_-_Shipping_Lanes.mp3",
+            },
+            {
+                name: "Antifa",
+                artist: "Gerald Smith",
+                path: "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/ccCommunity/Chad_Crouch/Arps/Chad_Crouch_-_Shipping_Lanes.mp3",
             }
         ];
 

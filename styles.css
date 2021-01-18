@@ -32,6 +32,8 @@ abbr {
 
 a {
     color: #cc9050;
+    text-decoration: none !important;
+
 }
 a:hover {
     color:#fa9f54;
@@ -124,7 +126,6 @@ a:hover {
 
 /* Main Page Flexbox styles */
 @media screen and (min-width: 600px) {
-    
     .card-compact {
         clear: left;
         border-radius : 10px;
@@ -173,11 +174,9 @@ a:hover {
         transform: scale(1.0);
         filter: brightness(0.9);
     }
-    
 }
 
 @media screen and (max-width: 600px) {
-    
     .card-compact {
         border-radius : 10px;
         background-color: #282828;
@@ -191,7 +190,6 @@ a:hover {
         margin: auto;
         object-fit: cover;
     }
-    
 }
 
 .card-image-box img {
@@ -238,4 +236,12 @@ time {
 	border-radius : 10px;
 	padding : 5px;
 	margin : 2px;
+}
+
+.taglink {
+    color: #fff;
+}
+
+.taglink:hover {
+    color: #333;
 }
